@@ -15,7 +15,7 @@ for i in range(1, 22):
         chapter_name = li_tag.a.get_text(strip=True)
         href_value = li_tag.a['href']
         
-        # Extracting the .html code from the href attribute
+        # 获取章节id
         html_code = href_value.split('/')[-1].split('.')[0]
         
         chapter_url = 'http://www.fd80.com/bookread/132711644/' + html_code + '.html'
@@ -24,7 +24,6 @@ for i in range(1, 22):
         chapter_text = chapter_html.text
         chapter_parser = None
         chapter_parser = BeautifulSoup(chapter_text, 'html.parser')
-        # www = mmm.prettify()
         
         chapter_name = li_tag.a.get_text(strip=True)
         novel_content += chapter_name + '\n'
